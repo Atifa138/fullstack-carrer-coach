@@ -16,7 +16,7 @@ function AppLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#07060d] via-[#0b0a17] to-[#131026] text-white">
+    <div className="min-h-screen bg-[#f0eeff]">
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       {/* Mobile backdrop */}
@@ -27,18 +27,21 @@ function AppLayout() {
         />
       )}
 
-      {/* Main content — offset by sidebar on desktop */}
+      {/* Main content */}
       <div className="md:pl-64">
         {/* Mobile top bar */}
-        <header className="sticky top-0 z-10 flex h-14 items-center gap-3 border-b border-white/10 bg-black/40 px-4 backdrop-blur-xl md:hidden">
+        <header className="sticky top-0 z-10 flex h-14 items-center gap-3 border-b border-ink/10 bg-white/90 px-4 backdrop-blur-xl md:hidden">
           <button
             onClick={() => setSidebarOpen(true)}
             className="rounded-lg p-1.5 text-ink/50 hover:bg-ink/5"
           >
             <IconMenu />
           </button>
-          <span className="font-display text-lg font-bold text-white">
-            career<span className="text-violet">coach</span><span className="text-coral">.</span>
+
+          <span className="font-display text-lg font-bold text-ink">
+            career
+            <span className="text-violet">coach</span>
+            <span className="text-coral">.</span>
           </span>
         </header>
 
